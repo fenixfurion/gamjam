@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/TitleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/control/mainMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Quicksand-VariableFont_wght.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = SubResource( 1 )
+
+[node name="mainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 512.0 ]
+}
+
+[node name="mainScreen" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mainLabel" type="Label" parent="mainScreen"]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 768.0
+margin_bottom = 384.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+text = "oh no how did this get here"
+align = 1
+
+[node name="startScreen" type="ReferenceRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keytimer" type="Timer" parent="startScreen"]
+wait_time = 2.0
+autostart = true
+
+[node name="startBackground" type="Panel" parent="startScreen"]
+margin_right = 1024.0
+margin_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startPressPlay" type="Label" parent="startScreen/startBackground"]
+margin_left = 256.0
+margin_top = 384.0
+margin_right = 768.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 2 )
+text = "Press \"A\" to Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startTitleText" type="Label" parent="startScreen/startBackground"]
+margin_left = 256.0
+margin_top = 64.0
+margin_right = 768.0
+margin_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "OUT OF CONTROL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
