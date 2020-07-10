@@ -11,6 +11,7 @@ var rng
 
 func update_random_key():
 	rng.randomize()
+	# this is bad but i wonder if there is a better way
 	current_valid_key = KEY_A + (rng.randi() % (KEY_Z-KEY_A))
 	print("timer fired - changing key to %s!" % OS.get_scancode_string(current_valid_key))
 	var buttonHintText = get_node("startScreen/startBackground/startPressPlay")
