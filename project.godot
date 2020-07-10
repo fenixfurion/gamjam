@@ -19,6 +19,16 @@ config/name="gamjam"
 run/main_scene="res://scenes/control/mainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+UserData="*res://addons/github-integration/scripts/user_data.gd"
+IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "github-integration" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

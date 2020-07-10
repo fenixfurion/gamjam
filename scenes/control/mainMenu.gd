@@ -9,15 +9,19 @@ var current_valid_key = KEY_A
 var timer
 var rng
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	# init rng
-	rng = RandomNumberGenerator.new()
+func update_random_key():
 	rng.randomize()
 	current_valid_key = KEY_A + (rng.randi() % (KEY_Z-KEY_A))
 	print("timer fired - changing key to %s!" % OS.get_scancode_string(current_valid_key))
 	var buttonHintText = get_node("startScreen/startBackground/startPressPlay")
 	buttonHintText.text = 'Press "%s" to start' % OS.get_scancode_string(current_valid_key)
+	
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	# init rng
+	rng = RandomNumberGenerator.new()
+	update_random_key()
 	# initialize main menu timer?
 	timer = get_node("startScreen/keytimer")
 	timer.connect("timeout",self,"_on_start_timer_event")
@@ -33,10 +37,7 @@ func _on_start_timer_event():
 	var keyIndex;
 	rng.randomize()
 	current_valid_key = KEY_A + (rng.randi() % (KEY_Z-KEY_A))
-	print("timer fired - changing key to %s!" % OS.get_scancode_string(current_valid_key))
-	var buttonHintText = get_node("startScreen/startBackground/startPressPlay")
-	buttonHintText.text = 'Press "%s" to start' % OS.get_scancode_string(current_valid_key)
-
+	update_random_key()
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
