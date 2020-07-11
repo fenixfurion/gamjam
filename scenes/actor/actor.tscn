@@ -12,7 +12,6 @@ extents = Vector2( 16, 16 )
 script = ExtResource( 5 )
 
 [node name="actorPhysics" type="KinematicBody2D" parent="."]
-position = Vector2( 250, 128 )
 script = ExtResource( 6 )
 
 [node name="actorSprite" type="AnimatedSprite" parent="actorPhysics"]
@@ -20,7 +19,7 @@ light_mask = -2147483647
 scale = Vector2( 2, 2 )
 frames = ExtResource( 1 )
 animation = "Walk_U"
-frame = 4
+frame = 1
 playing = true
 script = ExtResource( 7 )
 

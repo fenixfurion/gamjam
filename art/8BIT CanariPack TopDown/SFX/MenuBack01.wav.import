@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MenuBack01.wav-fba91b01249a6440e9c7064204d62f5c.sample"
+
+[deps]
+
+source_file="res://art/8BIT CanariPack TopDown/SFX/MenuBack01.wav"
+dest_files=[ "res://.import/MenuBack01.wav-fba91b01249a6440e9c7064204d62f5c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

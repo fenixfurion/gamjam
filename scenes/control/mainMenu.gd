@@ -39,6 +39,7 @@ func _on_start_timer_event():
 	rng.randomize()
 	current_valid_key = KEY_A + (rng.randi() % (KEY_Z-KEY_A))
 	update_random_key()
+	
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
