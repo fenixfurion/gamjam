@@ -13,6 +13,8 @@ font_data = SubResource( 1 )
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -256.0
+margin_bottom = -150.0
 size_flags_horizontal = 7
 size_flags_vertical = 7
 script = ExtResource( 2 )
@@ -22,8 +24,8 @@ __meta__ = {
 }
 
 [node name="mainScreen" type="Panel" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 512.0
+margin_bottom = 300.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
 __meta__ = {
@@ -31,19 +33,19 @@ __meta__ = {
 }
 
 [node name="mainLabel" type="Label" parent="mainScreen"]
-margin_left = 256.0
-margin_top = 128.0
-margin_right = 768.0
-margin_bottom = 384.0
+margin_left = 128.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 192.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
 text = "oh no how did this get here"
 align = 1
 
 [node name="startScreen" type="ReferenceRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 1024, 600 )
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 512, 300 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 __meta__ = {
@@ -55,8 +57,8 @@ wait_time = 2.0
 autostart = true
 
 [node name="startBackground" type="Panel" parent="startScreen"]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 512.0
+margin_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 7
@@ -66,10 +68,10 @@ __meta__ = {
 }
 
 [node name="startPressPlay" type="Label" parent="startScreen/startBackground"]
-margin_left = 256.0
-margin_top = 384.0
-margin_right = 768.0
-margin_bottom = 448.0
+margin_left = 128.0
+margin_top = 192.0
+margin_right = 384.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 2 )
 text = "Press \"A\" to Start"
 align = 1
@@ -79,10 +81,10 @@ __meta__ = {
 }
 
 [node name="startTitleText" type="Label" parent="startScreen/startBackground"]
-margin_left = 256.0
-margin_top = 64.0
-margin_right = 768.0
-margin_bottom = 320.0
+margin_left = 128.0
+margin_top = 32.0
+margin_right = 384.0
+margin_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = ExtResource( 1 )

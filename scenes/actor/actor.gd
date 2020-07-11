@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 # Actor class: should contain all of the required internal variables and 
 # state needed, the parent node will interface with this one?

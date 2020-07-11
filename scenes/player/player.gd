@@ -46,6 +46,8 @@ func processPlayerInput(delta):
 func _process(delta):
 	# process the player physics
 	processPlayerInput(delta)
+	# send position to crosshair
+	$crosshair.playerPosition = $actorPhysics.get_global_transform_with_canvas().get_origin()
 
 
 func _input(event):
