@@ -1,0 +1,13 @@
+{
+    "items":[
+        {
+            "id":1,
+            "type",1,
+            "name":"Test",
+            "sprite":"lol",
+            "user_sprite":"lol",
+            "hp":-1,
+            "sp":1
+        }
+    ]
+}
