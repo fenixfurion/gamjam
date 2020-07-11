@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/actor/playerPhysics.gd" type="Script" id=5]
 [ext_resource path="res://assets/actors/skeleton.tres" type="SpriteFrames" id=6]
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [node name="player" type="Node2D"]
@@ -21,12 +21,12 @@ light_mask = -2147483647
 scale = Vector2( 2, 2 )
 frames = ExtResource( 6 )
 animation = "Walk_U"
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 2 )
 
 [node name="actorCollision" type="CollisionShape2D" parent="actorPhysics"]
-shape = SubResource( 50 )
+shape = SubResource( 1 )
 
 [node name="crosshair" type="Node2D" parent="."]
 script = ExtResource( 4 )
