@@ -6,8 +6,20 @@ var playerPosition = Vector2(0.0, 0.0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	# connect a signal to callback whenever the game pauses
+	# only if we have a parent node (i.e.: the UI node)
+	var parentNode = get_parent()
+	if parentNode:
+		parentNode.connect("gamePauseStateChanged", self, "handlePauseStateChange")
+	
 	pass # Replace with function body.
 
+func handlePauseStateChange():
+	var parentNode = get_parent()
+	if parentNode.isPaused:
+		$crosshairTrace.hide()
+	else:
+		$crosshairTrace.show()
 
 func _process(delta):
 	playerPosition = get_player_node().get_transform().origin + get_player_node().get_node("actorPhysics").position
