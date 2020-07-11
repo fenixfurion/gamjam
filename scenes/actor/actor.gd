@@ -13,5 +13,5 @@ func _ready():
 	pass # Replace with function body.
 
 func initActor():
-	var actorSprite = $actorPhysics/actorSprite
+	var actorSprite = $actorSprite
 	actorSprite.frames = baseSprite

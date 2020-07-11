@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func processPlayerInput(delta):
-	var actorSprite = $actorPhysics/actorSprite
+	var actorSprite = $actorSprite
 	var actorPhysics = $actorPhysics
 	var targetVelocity = Vector2.ZERO
 	var inputVector = Vector2.ZERO
@@ -46,12 +46,10 @@ func processPlayerInput(delta):
 func _process(delta):
 	# process the player physics
 	processPlayerInput(delta)
-	# send position to crosshair
-	$crosshair.playerPosition = $actorPhysics.get_position()
 
 
 func _input(event):
-	var actorSprite = $actorPhysics/actorSprite
+	var actorSprite = $actorSprite
 	if event.is_action_pressed("ui_right"):
 		actorSprite.facing = "R"
 	elif event.is_action_pressed("ui_left"):

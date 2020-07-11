@@ -5,23 +5,23 @@
 [ext_resource path="res://scenes/actor/playerPhysics.gd" type="Script" id=6]
 [ext_resource path="res://scenes/actor/actorSprite.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 16, 16 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 12 )
 
 [node name="actor" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="actorPhysics" type="KinematicBody2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="actorSprite" type="AnimatedSprite" parent="actorPhysics"]
+[node name="actorSprite" type="AnimatedSprite" parent="."]
 light_mask = -2147483647
 scale = Vector2( 2, 2 )
 frames = ExtResource( 1 )
 animation = "Walk_U"
-frame = 5
+frame = 4
 playing = true
 script = ExtResource( 7 )
 
+[node name="actorPhysics" type="KinematicBody2D" parent="."]
+script = ExtResource( 6 )
+
 [node name="actorCollision" type="CollisionShape2D" parent="actorPhysics"]
-shape = SubResource( 50 )
+shape = SubResource( 1 )
