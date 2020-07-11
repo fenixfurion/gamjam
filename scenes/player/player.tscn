@@ -5,9 +5,8 @@
 [ext_resource path="res://scenes/actor/playerPhysics.gd" type="Script" id=5]
 [ext_resource path="res://assets/actors/skeleton.tres" type="SpriteFrames" id=6]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 5.81384
-height = 4.8822
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 12 )
 
 [node name="player" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,7 +17,7 @@ rotation = 0.0122173
 scale = Vector2( 2, 2 )
 frames = ExtResource( 6 )
 animation = "Walk_U"
-frame = 5
+frame = 2
 playing = true
 script = ExtResource( 2 )
 
@@ -27,6 +26,4 @@ rotation = 0.0122173
 script = ExtResource( 5 )
 
 [node name="actorCollision" type="CollisionShape2D" parent="actorPhysics"]
-position = Vector2( -0.140265, 10.1998 )
-rotation = 1.5708
 shape = SubResource( 1 )
