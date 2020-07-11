@@ -11,12 +11,18 @@
 #
 # there's no multi line comments in this lol
 
-extends Resource  # because it appears that eveything does
+extends Node  # because it appears that eveything does
 class_name Item
 
+var id
+var item_name
+var item_type
+var sprite
+var user_sprite
+
 func _init(item_dict):
-	self.id = item_dict['id']
-	self.name = item_dict["name"]
-	self.item_type = item_dict["type"]
+	self.id = int(item_dict['id'])
+	self.item_name = item_dict["name"]
+	self.item_type = int(item_dict["type"])
 	self.sprite = item_dict["sprite"]
 	self.user_sprite = item_dict["user_sprite"]

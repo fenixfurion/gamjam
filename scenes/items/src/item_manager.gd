@@ -17,10 +17,18 @@ var items = []
 
 func register_items_from_json():
 	var file = File.new()
-	file.open("types/items.json", _File.READ)
+	var a = file.open("res://scenes/items/src/types/items.json", File.READ)
+	var text = file.get_as_text()
+	var dict = {}
+	dict = parse_json(text)
+	file.close()
+	for i in dict["items"]:
+		var it = register_item(i)
+		items.append(it)
+
 	
 func register_item(item_dict):
-	match item_dict['type']:
+	match int(item_dict['type']):
 		ITEM_BY_TYPE.HELM:
 			return Helm.new(item_dict)
 		ITEM_BY_TYPE.CHEST:
@@ -39,6 +47,7 @@ func register_item(item_dict):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	register_items_from_json()
 	pass # Replace with function body.
 
 
