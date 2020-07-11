@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var Velocity = Vector2.ZERO
 
+
 func _physics_process(delta):
 	move_and_slide(Velocity)
 
