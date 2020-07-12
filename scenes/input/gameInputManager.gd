@@ -31,9 +31,9 @@ var keyDict = {
 		'key' : BUTTON_LEFT,
 		'actions' : ["attack"]
 	},
-	'shift': {
-		'name': "Shift",
-		'key' : KEY_SHIFT,
+	'space': {
+		'name': "Space",
+		'key' : KEY_SPACE,
 		'actions' : ["roll"]
 	}
 }

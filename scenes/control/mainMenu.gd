@@ -45,7 +45,8 @@ func _input(event):
 		if event.pressed:
 			print("Got keypress %s" % OS.get_scancode_string(event.scancode))
 			if event.scancode == current_valid_key:
-				print("Matching key - hiding start screen")
+				print("Matching key - moving to level1")
+				get_tree().change_scene("res://Levels/Level1.tscn")
 				get_node("startScreen").hide()
 			else:
 				print("wrong key")
