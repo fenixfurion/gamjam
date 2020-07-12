@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://scenes/items/src/types/item.gd"
+}, {
+"base": "Node",
+"class": "ItemManager",
+"language": "GDScript",
+"path": "res://scenes/items/src/item_manager.gd"
+} ]
 _global_script_class_icons={
-
+"Item": "",
+"ItemManager": ""
 }
 
 [application]
@@ -36,7 +47,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "github-integration" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 
