@@ -2,39 +2,33 @@ extends Node
 
 # gameInputManager
 # recalculate keybinds in pickupAction and dropAction?
-signal keysUpdated
+signal keysUpdated(key_dict)
 
 # using a dict cause fuck life
 var keyDict = {
-	'w': { 
-		'name': "W",
-		'key' : KEY_W,
-		'actions' : ["move_up"]
+	'move_up': { 
+		'key' : [KEY_W],
+		'name':['Up']
 	},
-	'a': {
-		'name': "A",
-		'key' : KEY_A,
-		'actions' : ["move_left"]
+	'move_left': {
+		'key' : [KEY_A],
+		'name':['Left']
 	},
-	's': {
-		'name': "S",
-		'key' : KEY_S,
-		'actions' : ["move_down"]
+	'move_down': {
+		'key' : [KEY_S],
+		'name':['Down']
 	},
-	'd': {
-		'name': "D",
-		'key' : KEY_D,
-		'actions' : ["move_right"]
+	'move_right': {
+		'key' : [KEY_D],
+		'name': ['Right']
 	},
-	'mouse1': {
-		'name': "LMB",
-		'key' : BUTTON_LEFT,
-		'actions' : ["attack"]
+	'attack': {
+		'key' : [BUTTON_LEFT],
+		'name': ['Attack']
 	},
-	'space': {
-		'name': "Space",
-		'key' : KEY_SPACE,
-		'actions' : ["roll"]
+	'roll': {
+		'key' : [KEY_SPACE],
+		'name': ['Roll']
 	}
 }
 
@@ -50,17 +44,26 @@ func reload_keys():
 	clear_keybinds()
 	print("DEBUG: registering keys...")
 	for key in keyDict:
-		for action in keyDict[key]['actions']:
-			if !action in InputMap.get_actions():
-				print("DEBUG: Registering action %s to InputMap" % action)
-				InputMap.add_action(action, 0.1)
-			print("DEBUG: adding key %s to action %s " % [keyDict[key]['name'], action])
-			var event = InputEventKey.new()
-			event.scancode = keyDict[key]['key']
-			InputMap.action_add_event(action, event)
+		if !key in InputMap.get_actions():
+			print("DEBUG: Registering action %s to InputMap" % key)
+		InputMap.add_action(key, 0.1)
+		print("DEBUG: adding key %s to action %s " % [keyDict[key], key])
+		var event = InputEventKey.new()
+		event.scancode = keyDict[key]['key'][-1]
+		keyDict[key]['key'] = [keyDict[key]['key'][0]]
+		InputMap.action_add_event(key, event)
 	print("DEBUG: new keys:")
 	print_keys()
-	emit_signal("keysUpdated")
+	emit_signal("keysUpdated", keyDict)
+
+func update_key(action, key):
+	keyDict[action]["key"].append(key)
+	InputMap.action_add_event(action, key)
+	
+func remove_key(action):
+	keyDict[action]["key"].pop()
+	InputMap.action_add_event(action, keyDict[action]["key"][-1])
+
 	
 func clear_keybinds():
 	print("Clearing keybinds")

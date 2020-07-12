@@ -55,12 +55,13 @@ func register_item(item_dict):
 		ITEM_BY_TYPE.CONS:
 			return Cons.new(item_dict)
 
+
 func get_item_from_list():
 	# Gets a random item for a list
 	return self.items[randi() % self.items.size()]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	register_items_from_json()
-	print(items)
 	pass # Replace with function body.

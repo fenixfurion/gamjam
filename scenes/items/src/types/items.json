@@ -7,10 +7,7 @@
             "texture":"res://art/8BIT CanariPack TopDown/SPRITES/ITEMS/item8BIT_boots.png",
             "user_sprite":"lol",
             "actions": {
-                "sp":10,
-                "hp":5,
-                "rebind1_key":"w",
-                "rebind1_phrase":"ui-right"
+                "move_up":"KEY_R"
             }
         }
     ]
