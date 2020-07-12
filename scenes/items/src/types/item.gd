@@ -17,12 +17,14 @@ class_name Item
 var id
 var item_name
 var item_type
-var sprite
+var texture
 var user_sprite
+var actions
 
 func _init(item_dict):
 	self.id = int(item_dict['id'])
 	self.item_name = item_dict["name"]
 	self.item_type = int(item_dict["type"])
-	self.sprite = item_dict["sprite"]
+	self.texture = load(item_dict["texture"])
 	self.user_sprite = item_dict["user_sprite"]
+	self.actions = item_dict["actions"]

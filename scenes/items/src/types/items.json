@@ -2,12 +2,16 @@
     "items":[
         {
             "id":1,
-            "type":1,
-            "name":"Test",
-            "sprite":"lol",
+            "type":3,
+            "name":"dev boots",
+            "texture":"res://art/8BIT CanariPack TopDown/SPRITES/ITEMS/item8BIT_boots.png",
             "user_sprite":"lol",
-            "hp":-1,
-            "sp":1
+            "actions": {
+                "sp":10,
+                "hp":5,
+                "rebind1_key":"w",
+                "rebind1_phrase":"ui-right"
+            }
         }
     ]
 }
