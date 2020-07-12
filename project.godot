@@ -43,13 +43,6 @@ window/size/test_height=600
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
-<<<<<<< Updated upstream
-[editor_plugins]
-
-enabled=PoolStringArray(  )
-
-=======
->>>>>>> Stashed changes
 [importer_defaults]
 
 texture={
