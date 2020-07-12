@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/keybindGraphic.gd" type="Script" id=1]
+
+[node name="keybindGraphic" type="ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -467.0
+margin_bottom = -282.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.607843 )
+margin_right = 45.0
+margin_bottom = 18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyName" type="Label" parent="."]
+margin_top = 2.87147
+margin_right = 45.0
+margin_bottom = 17.8715
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

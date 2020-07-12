@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/ui/crosshair.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/playerCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ui/gameUI.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui/playerUI.gd" type="Script" id=4]
 
 [node name="gameUI" type="Control"]
 pause_mode = 2
@@ -39,6 +40,16 @@ margin_right = 279.679
 margin_bottom = 79.1629
 text = "Paused
 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playerUI" type="Container" parent="playerCamera"]
+margin_left = -256.0
+margin_top = -150.0
+margin_right = 256.0
+margin_bottom = 150.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

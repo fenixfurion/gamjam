@@ -4,7 +4,7 @@
 # no idea how to make this like global
 
 extends Node
-class_name ItemManager
+# class_name ItemManager
 
 # Load specific item resources
 const Helm = preload("types/helm.gd")
@@ -62,4 +62,5 @@ func get_item_from_list():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	register_items_from_json()
+	print(items)
 	pass # Replace with function body.

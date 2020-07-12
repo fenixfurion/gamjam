@@ -15,8 +15,8 @@ func processPlayerInput(delta):
 	var actorPhysics = $actorPhysics
 	var targetVelocity = Vector2.ZERO
 	var inputVector = Vector2.ZERO
-	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	inputVector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	inputVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	inputVector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	inputVector = inputVector.normalized()
 	if inputVector.length() > 0:
 		if abs(inputVector.x) > abs(inputVector.y):
@@ -50,11 +50,11 @@ func _process(delta):
 
 func _input(event):
 	var actorSprite = $actorSprite
-	if event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("move_right"):
 		actorSprite.facing = "R"
-	elif event.is_action_pressed("ui_left"):
+	elif event.is_action_pressed("move_left"):
 		actorSprite.facing = "L"
-	elif event.is_action_pressed("ui_down"):
+	elif event.is_action_pressed("move_down"):
 		actorSprite.facing = "D"
-	elif event.is_action_pressed("ui_up"):
+	elif event.is_action_pressed("move_up"):
 		actorSprite.facing = "U"
