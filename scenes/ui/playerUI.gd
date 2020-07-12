@@ -16,7 +16,7 @@ func updateBindings():
 		node.queue_free()
 	var i = 0;
 	for key in inputManager.keyDict.keys():
-		print("Passing key info to new keybindGraphic for %s" % str(inputManager.keyDict[key]["name"]))
+		print("Passing key info to new keybindGraphic for %s" % str(inputManager.keyDict[key]))
 		# generate the UI here
 		var kg = kgScene.instance()
 		# pass key info to the keybindGraphic, it will take care of the drawing
