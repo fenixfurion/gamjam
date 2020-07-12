@@ -32,5 +32,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="pauseText" type="Label" parent="playerCamera/pauseScreen"]
+margin_left = 233.679
+margin_top = 48.1629
+margin_right = 279.679
+margin_bottom = 79.1629
+text = "Paused
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="crosshair" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
