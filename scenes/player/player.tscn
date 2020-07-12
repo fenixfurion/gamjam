@@ -17,7 +17,7 @@ rotation = 0.0122173
 scale = Vector2( 2, 2 )
 frames = ExtResource( 6 )
 animation = "Walk_U"
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 2 )
 
@@ -27,3 +27,4 @@ script = ExtResource( 5 )
 
 [node name="actorCollision" type="CollisionShape2D" parent="actorPhysics"]
 shape = SubResource( 1 )
+[connection signal="playerRolled" from="." to="actorSprite" method="_on_player_playerRolled"]

@@ -6,34 +6,34 @@ signal keysUpdated
 
 # using a dict cause fuck life
 var keyDict = {
-	'W': { 
+	'w': { 
 		'name': "W",
 		'key' : KEY_W,
 		'actions' : ["move_up"]
 	},
-	'A': {
+	'a': {
 		'name': "A",
 		'key' : KEY_A,
 		'actions' : ["move_left"]
 	},
-	'S': {
+	's': {
 		'name': "S",
 		'key' : KEY_S,
 		'actions' : ["move_down"]
 	},
-	'D': {
+	'd': {
 		'name': "D",
 		'key' : KEY_D,
 		'actions' : ["move_right"]
 	},
-	'Mouse1': {
+	'mouse1': {
 		'name': "LMB",
 		'key' : BUTTON_LEFT,
 		'actions' : ["attack"]
 	},
-	'Space': {
-		'name': "Space",
-		'key' : KEY_SPACE,
+	'shift': {
+		'name': "Shift",
+		'key' : KEY_SHIFT,
 		'actions' : ["roll"]
 	}
 }

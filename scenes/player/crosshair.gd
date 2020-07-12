@@ -22,16 +22,17 @@ func handlePauseStateChange():
 		$crosshairTrace.show()
 
 func _process(delta):
-	playerPosition = get_player_node().get_transform().origin + get_player_node().get_node("actorPhysics").position
-	var playerCamera = get_parent().get_node("playerCamera")
-	var crosshairTrace = $crosshairTrace
-	# set crosshair position to current mouse position + camera offset
-	#print(playerCamera.position)
-	self.position = playerCamera.position + (get_viewport().get_mouse_position() - get_viewport_rect().size/2)
-	#print(self.position)
-	#  print("[%s, %s]" %[playerPosition, self.position])
-	# DEBUG? draw a line between player and crosshair
-	crosshairTrace.points = PoolVector2Array([to_local(playerPosition), to_local(self.position)])
+	if get_player_node() != null:
+		playerPosition = get_player_node().get_transform().origin + get_player_node().get_node("actorPhysics").position
+		var playerCamera = get_parent().get_node("playerCamera")
+		var crosshairTrace = $crosshairTrace
+		# set crosshair position to current mouse position + camera offset
+		#print(playerCamera.position)
+		self.position = playerCamera.position + (get_viewport().get_mouse_position() - get_viewport_rect().size/2)
+		#print(self.position)
+		#  print("[%s, %s]" %[playerPosition, self.position])
+		# DEBUG? draw a line between player and crosshair
+		crosshairTrace.points = PoolVector2Array([to_local(playerPosition), to_local(self.position)])
 	pass
 
 func get_player_node():
